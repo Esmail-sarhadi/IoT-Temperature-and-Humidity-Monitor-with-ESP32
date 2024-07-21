@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <DHT.h>
-#include <SPIFFS.h>
+#include <SPIFFS.h> 
 #include <ArduinoJson.h> 
 
 // WiFi settings
