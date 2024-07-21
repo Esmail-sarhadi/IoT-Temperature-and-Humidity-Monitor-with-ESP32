@@ -5,7 +5,7 @@
 #include <ArduinoJson.h>  
   
 // WiFi settings
-const char* ssid = "charon";
+const char* ssid = "charon"; 
 const char* password = "12121212";
  
 // DHT settings
