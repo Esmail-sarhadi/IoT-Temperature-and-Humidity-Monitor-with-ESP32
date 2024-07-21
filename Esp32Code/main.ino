@@ -18,7 +18,7 @@ DHT dht(DHTPIN, DHTTYPE);
  
 // Create a web server
 WebServer server(80);
- 
+  
 void setup() {
   // Start serial communication for displaying information
   Serial.begin(115200);
