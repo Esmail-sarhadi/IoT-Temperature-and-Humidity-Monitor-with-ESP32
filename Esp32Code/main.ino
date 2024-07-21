@@ -35,7 +35,7 @@ void setup() {
   Serial.println("Connected!");
   Serial.print("IP Address: ");
   Serial.println(WiFi.localIP());
-
+ 
   // Initialize SPIFFS
   if (!SPIFFS.begin(true)) {
     Serial.println("An Error has occurred while mounting SPIFFS");
