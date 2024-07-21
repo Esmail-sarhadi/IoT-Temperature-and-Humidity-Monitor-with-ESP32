@@ -3,7 +3,7 @@
 #include <DHT.h>   
 #include <SPIFFS.h>     
 #include <ArduinoJson.h>  
-    
+     
 // WiFi settings  
 const char* ssid = "charon";     
 const char* password = "12121212"; 
