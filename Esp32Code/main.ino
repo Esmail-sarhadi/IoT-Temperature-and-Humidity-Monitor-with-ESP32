@@ -16,6 +16,7 @@ DHT dht(DHTPIN, DHTTYPE);
 // GPIO settings for the lamp
 #define LAMP_PIN 2
 
+
 // Create a web server
 WebServer server(80);
 
