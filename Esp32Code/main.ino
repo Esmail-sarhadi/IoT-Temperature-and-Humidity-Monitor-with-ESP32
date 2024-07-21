@@ -11,7 +11,7 @@ const char* password = "12121212";
 // DHT settings
 #define DHTPIN 4 // Pin connected to the DHT
 #define DHTTYPE DHT21 
-DHT dht(DHTPIN, DHTTYPE);
+DHT dht(DHTPIN, DHTTYPE); 
 
 // GPIO settings for the lamp
 #define LAMP_PIN 2 
