@@ -1,6 +1,6 @@
 #include <WiFi.h>
 #include <WebServer.h>
-#include <DHT.h>  
+#include <DHT.h>   
 #include <SPIFFS.h>  
 #include <ArduinoJson.h> 
   
