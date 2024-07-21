@@ -8,7 +8,6 @@
 const char* ssid = "charon";
 const char* password = "12121212";
 
-
 // DHT settings
 #define DHTPIN 4 // Pin connected to the DHT
 #define DHTTYPE DHT21
