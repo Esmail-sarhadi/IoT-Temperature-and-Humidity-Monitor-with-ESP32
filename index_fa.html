@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="vqq11CWNVkLVnZvjCeZReKc8-FRmgxek2SOWjr35CbY" />
+    <link rel="shortcut icon" type="image/png" href="android-chrome-512x512.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <title>مانیتور دما و رطوبت با ESP32 | این پروژه یک راه‌حل مبتنی بر اینترنت اشیاء برای مانیتورینگ دما و رطوبت با استفاده از میکروکنترلر ESP32 است. این پروژه از سنسور DHT21 برای جمع‌آوری داده‌های محیطی استفاده می‌کند و این داده‌ها را از طریق یک رابط وب که روی ESP32 میزبانی می‌شود، ارائه می‌دهد. کاربران همچنین می‌توانند از طریق رابط وب، لامپ متصل را کنترل کرده و داده‌های ضبط شده را دانلود کنند.</title>
+    <meta name="generator" content="Jekyll v3.9.5" />
+    <meta property="og:title" content="مانیتور دما و رطوبت با ESP32" />
+    <meta property="og:locale" content="fa" />
+    <meta name="description" content="این پروژه یک راه‌حل مبتنی بر اینترنت اشیاء برای مانیتورینگ دما و رطوبت با استفاده از میکروکنترلر ESP32 است. این پروژه از سنسور DHT21 برای جمع‌آوری داده‌های محیطی استفاده می‌کند و این داده‌ها را از طریق یک رابط وب که روی ESP32 میزبانی می‌شود، ارائه می‌دهد. کاربران همچنین می‌توانند از طریق رابط وب، لامپ متصل را کنترل کرده و داده‌های ضبط شده را دانلود کنند." />
+    <meta property="og:description" content="این پروژه یک راه‌حل مبتنی بر اینترنت اشیاء برای مانیتورینگ دما و رطوبت با استفاده از میکروکنترلر ESP32 است. این پروژه از سنسور DHT21 برای جمع‌آوری داده‌های محیطی استفاده می‌کند و این داده‌ها را از طریق یک رابط وب که روی ESP32 میزبانی می‌شود، ارائه می‌دهد. کاربران همچنین می‌توانند از طریق رابط وب، لامپ متصل را کنترل کرده و داده‌های ضبط شده را دانلود کنند." />
+    <link rel="canonical" href="https://esmail-sarhadi.github.io/IoT-Temperature-and-Humidity-Monitor-with-ESP32/index_fa.html" />
+    <meta property="og:url" content="https://esmail-sarhadi.github.io/IoT-Temperature-and-Humidity-Monitor-with-ESP32/index_fa.html" />
+    <meta property="og:site_name" content="مانیتور دما و رطوبت با ESP32" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="مانیتور دما و رطوبت با ESP32" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","description":"این پروژه یک راه‌حل مبتنی بر اینترنت اشیاء برای مانیتورینگ دما و رطوبت با استفاده از میکروکنترلر ESP32 است. این پروژه از سنسور DHT21 برای جمع‌آوری داده‌های محیطی استفاده می‌کند و این داده‌ها را از طریق یک رابط وب که روی ESP32 میزبانی می‌شود، ارائه می‌دهد. کاربران همچنین می‌توانند از طریق رابط وب، لامپ متصل را کنترل کرده و داده‌های ضبط شده را دانلود کنند.","headline":"مانیتور دما و رطوبت با ESP32","name":"مانیتور دما و رطوبت با ESP32","url":"https://esmail-sarhadi.github.io/IoT-Temperature-and-Humidity-Monitor-with-ESP32/index_fa.html"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/IoT-Temperature-and-Humidity-Monitor-with-ESP32/assets/css/style.css?v=6ec3d19c1a11e6f2d2ce648d2e931f6c2edee2c3">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+
+    <!-- You can set your favicon here -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/IoT-Temperature-and-Humidity-Monitor-with-ESP32/favicon.ico" -->
+
+    <!-- end custom head snippets -->
+
+    <style>
+      .language-switch {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .language-switch img {
+        transition: transform 0.3s ease;
+      }
+
+      .language-switch img:hover {
+        transform: scale(1.2);
+      }
+
+      .markdown-body {
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate__animated {
+        --animate-duration: 1s;
+      }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background: #333;
+        background-image: linear-gradient(to right, #ccc, #333, #ccc);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body animate__animated animate__fadeIn">
+      <div class="language-switch">
+        <span style="font-size: 1.2em; font-weight: bold; margin-left: 10px;">زبان</span>
+        <a href="index.html" style="text-decoration: none; margin: 0 5px;">
+          <img src="https://flagcdn.com/w40/gb.png" width="30" alt="English" class="animate__animated animate__bounce">
+        </a>
+        <a href="index_fa.html" style="text-decoration: none; margin: 0 5px;">
+          <img src="https://flagcdn.com/w40/ir.png" width="30" alt="فارسی" class="animate__animated animate__bounce">
+        </a>
+      </div>
+
+      <h1 class="animate__animated animate__fadeInDown"><a href="https://esmail-sarhadi.github.io/IoT-Temperature-and-Humidity-Monitor-with-ESP32/index_fa.html">مانیتور دما و رطوبت با ESP32</a> 🌡️🌧️</h1>
+      
+      <hr class="animate__animated animate__fadeInUp" />
+
+      <h1 id="iot-temperature-and-humidity-monitor-with-esp32" class="animate__animated animate__fadeInLeft">مانیتور دما و رطوبت با ESP32</h1>
+
+      <p class="animate__animated animate__fadeInRight">این پروژه یک کاربرد اینترنت اشیاء (IoT) است که از میکروکنترلر ESP32 برای مانیتورینگ دما و رطوبت استفاده می‌کند. داده‌ها با استفاده از سنسور DHT21 جمع‌آوری شده و در صفحه وبی که روی ESP32 میزبانی می‌شود، نمایش داده می‌شود. علاوه بر این، رابط وب به کاربران امکان کنترل لامپ و دانلود داده‌های ضبط شده را می‌دهد. 📊📉</p>
+
+      <h2 id="features" class="animate__animated animate__fadeInUp">ویژگی‌ها 🌟</h2>
+
+      <ul class="animate__animated animate__fadeInLeft">
+        <li><strong>اتصال WiFi</strong>: اتصال به شبکه WiFi مشخص شده. 📶</li>
+        <li><strong>سنسور DHT21</strong>: خواندن داده‌های دما و رطوبت. 🌡️</li>
+        <li><strong>وب سرور</strong>: میزبانی یک صفحه وب برای نمایش داده‌های سنسور و کنترل لامپ. 💻</li>
+        <li><strong>SPIFFS</strong>: ذخیره داده‌ها به صورت محلی روی سیستم فایل ESP32. 🗄️</li>
+        <li><strong>JSON</strong>: استفاده از JSON برای تبادل داده بین ESP32 و رابط وب. 🔄</li>
+      </ul>
+
+      <h2 id="hardware-required" class="animate__animated animate__fadeInDown">سخت‌افزار مورد نیاز 🛠️</h2>
+
+      <ul class="animate__animated animate__fadeInRight">
+        <li>برد ESP32</li>
+        <li>سنسور DHT21</li>
+        <li>رگولاتور ولتاژ 3.3V</li>
+        <li>مقاومت‌ها و خازن‌ها</li>
+        <li>برد بورد و سیم‌ها</li>
+      </ul>
+
+      <h2 id="software-required" class="animate__animated animate__fadeInUp">نرم‌افزار مورد نیاز 💻</h2>
+
+      <ul class="animate__animated animate__fadeInLeft">
+        <li>Arduino IDE</li>
+        <li>کتابخانه‌های ESP32 و DHT</li>
+      </ul>
+
+      <h2 id="setup" class="animate__animated animate__fadeInDown">راه‌اندازی 🚀</h2>
+
+      <ol class="animate__animated animate__fadeInRight">
+        <li>اتصال سنسور DHT21 به ESP32.</li>
+        <li>نصب کتابخانه‌های مورد نیاز در Arduino IDE.</li>
+        <li>آپلود کد به ESP32.</li>
+        <li>باز کردن صفحه وب برای مشاهده داده‌ها و کنترل لامپ.</li>
+      </ol>
+
+      <h2 id="code-explanation" class="animate__animated animate__fadeInUp">توضیح کد 📜</h2>
+
+      <p class="animate__animated animate__fadeInLeft">کد این پروژه به زبان C++ نوشته شده و به قسمت‌های زیر تقسیم می‌شود:</p>
+
+      <ol class="animate__animated animate__fadeInRight">
+        <li><strong>تعریف متغیرها</strong>: تعریف متغیرها و کتابخانه‌های مورد نیاز.</li>
+        <li><strong>راه‌اندازی</strong>: تنظیمات اولیه شامل اتصال WiFi و راه‌اندازی سنسور. </li>
+        <li><strong>حلقه اصلی</strong>: خواندن داده‌های سنسور و به‌روزرسانی صفحه وب.</li>
+      </ol>
+
+      <h2 id="conclusion" class="animate__animated animate__fadeInUp">نتیجه‌گیری 🏁</h2>
+
+      <p class="animate__animated animate__fadeInLeft">این پروژه یک راه‌حل ساده و کارآمد برای مانیتورینگ دما و رطوبت با استفاده از ESP32 ارائه می‌دهد. این پروژه نه تنها داده‌های محیطی را نمایش می‌دهد بلکه امکان کنترل دستگاه‌های متصل را نیز فراهم می‌کند. ✅</p>
+
+      <h2 id="acknowledgements" class="animate__animated animate__fadeInRight">تشکر و قدردانی 🙏</h2>
+
+      <p class="animate__animated animate__fadeInUp">از همه کسانی که به توسعه این پروژه کمک کرده‌اند، متشکریم. 🤝</p>
+      
+      <h2 id="contribution" class="animate__animated animate__fadeInDown">مشارکت 🛠️</h2>
+
+      <p class="animate__animated animate__fadeInLeft">احساس راحتی کنید تا این مخزن را فورک کنید و با ارسال درخواست‌های پول مشارکت کنید. برای تغییرات عمده، لطفاً ابتدا یک ایشو باز کنید تا در مورد آنچه می‌خواهید تغییر دهید، بحث کنید. 🌟</p>
+      
+      <h2 id="profile" class="animate__animated animate__fadeInRight">پروفایل 🧑‍💻</h2>
+
+      <p class="animate__animated animate__fadeInUp">پروفایل من را در GitHub ببینید: <a href="https://github.com/Esmail-sarhadi" target="_blank" class="animate__animated animate__heartBeat">Esmail Sarhadi</a></p>
+
+      <h2 id="project-link" class="animate__animated animate__fadeInDown">لینک پروژه 🔗</h2>
+
+      <p class="animate__animated animate__fadeInLeft">این پروژه را در GitHub ببینید: <a href="https://github.com/Esmail-sarhadi/IoT-Temperature-and-Humidity-Monitor-with-ESP32" target="_blank" class="animate__animated animate__heartBeat">IoT-Temperature-and-Humidity-Monitor-with-ESP32</a></p>
+
+      <h2 id="donation" class="animate__animated animate__fadeInRight">کمک مالی 💰</h2>
+
+      <p class="animate__animated animate__fadeInUp">اگر این پروژه را مفید می‌دانید، در نظر بگیرید که کمک مالی کنید: 💸</p>
+      <p><a href="https://nowpayments.io/donation?api_key=REWCYVC-A1AMFK3-QNRS663-PKJSBD2&source=lk_donation&medium=referral" target="_blank">
+        <img src="https://nowpayments.io/images/embeds/donation-button-black.svg" alt="دکمه کمک مالی کریپتو توسط NOWPayments" class="animate__animated animate__pulse">
+      </a></p>
+
+      <h2 id="license" class="animate__animated animate__fadeInDown">مجوز 📄</h2>
+
+      <p class="animate__animated animate__fadeInLeft">این پروژه تحت مجوز MIT است - جزئیات را در فایل <a href="/IoT-Temperature-and-Humidity-Monitor-with-ESP32/LICENSE" class="animate__animated animate__heartBeat">LICENSE</a> ببینید.</p>
+
+      <hr class="animate__animated animate__fadeInUp" />
+
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray animate__animated animate__fadeIn">
+        این سایت متن باز است. <a href="https://github.com/Esmail-sarhadi/IoT-Temperature-and-Humidity-Monitor-with-ESP32/edit/main/README.md" class="animate__animated animate__heartBeat">این صفحه را بهبود دهید</a>.
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
